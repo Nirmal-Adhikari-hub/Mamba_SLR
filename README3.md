@@ -17,7 +17,8 @@ conda install -y -c conda-forge \
    cudatoolkit=12.1 \
    nvcc_linux-64=12.1
 
-# since the nvcc looks at CUDA_HOME so the CUDA wheels installed in the conda env should be pointed to by the CUDA_HOME
+# since the nvcc looks at CUDA_HOME so the CUDA wheels installed 
+# in the conda env should be pointed to by the CUDA_HOME
 export CUDA_HOME=$CONDA_PREFIX
 
 # verify
@@ -32,10 +33,17 @@ pip install -r pip_list.txt
 # apex package installation
 git clone https://github.com/NVIDIA/apex.git
 cd apex
-pip install --no-build-isolation --verbose --no-cache-dir --global-option="--cpp_ext" --global_option="--cuda_ext" ./
+pip install --no-build-isolation \
+--verbose --no-cache-dir \ 
+--global-option="--cpp_ext" \ 
+--global_option="--cuda_ext" ./
 cd ..
 rm -rf apex
 
-# Sometimes mamba-ssm=2.2.4 also gives error. Use your environments installed dependency, while installing this one from the pip with `--no-build-isolation` flag, instead of the pip's default option of installing the package in isolation in separate env
+# Sometimes mamba-ssm=2.2.4 also gives error. Use your 
+# environments installed dependency, while installing this one 
+# from the pip with `--no-build-isolation` flag, instead of the 
+# pip's default option of installing the package in isolation in 
+# separate env
 pip install --no-build-isolation mamba-ssm==2.2.4
 ```
