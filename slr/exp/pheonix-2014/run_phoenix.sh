@@ -31,13 +31,13 @@ torchrun --nproc_per_node="$N_GPUS" --master_port="$MASTER_PORT" ../../main.py \
     --aa 'rand-m5-mstd0.25' \
     --temp_scale 0.0 \
     --model_key 'model_ema' \
-    --prefix '/mnt/data/phoenix-2014/phoenix-2014-multisigner' \
-    --gloss_dict_path '/home/chingiz/mambaslr/Mamba_SLR/data/phoenix2014/gloss_dict.npy' \
-    --meta_dir_path '/home/chingiz/mambaslr/Mamba_SLR/data/phoenix2014' \
-    --kp_path '/mnt/data/phoenix-2014/phoenix-2014-keypoints.pkl' \
-    --output_dir '/home/chingiz/mambaslr/Mamba_SLR/slr/exp/pheonix-2014' \
-    --log_dir '/home/chingiz/mambaslr/Mamba_SLR/slr/exp/pheonix-2014' \
-    --resume '/home/chingiz/mambaslr/Mamba_SLR/slr/exp/pheonix-2014' \
+    --prefix '/shared/home/xvoice/nirmal/SlowFastSign/dataset/phoenix2014' \
+    --gloss_dict_path '/shared/home/xvoice/nirmal/mambaslr/Mamba_SLR/data/phoenix2014/gloss_dict.npy' \
+    --meta_dir_path '/shared/home/xvoice/nirmal/mambaslr/Mamba_SLR/data/phoenix2014' \
+    --kp_path '/shared/home/xvoice/nirmal/mambaslr/Mamba_SLR/data/phoenix2014/phoenix-2014-keypoints_hrnet-filtered_SMOOTH_v2-256x256_INTERPOLATED.pkl' \
+    --output_dir '/shared/home/xvoice/nirmal/mambaslr/Mamba_SLR/slr/exp/pheonix-2014' \
+    --log_dir '/shared/home/xvoice/nirmal/mambaslr/Mamba_SLR/slr/exp/pheonix-2014' \
+    --resume '/shared/home/xvoice/nirmal/mambaslr/Mamba_SLR/slr/exp/pheonix-2014' \
     --auto_resume \
     --save_ckpt \
     --test_best \
