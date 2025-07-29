@@ -30,15 +30,14 @@ torchrun --nproc_per_node="$N_GPUS" --master_port="$MASTER_PORT" ../../main.py \
     --warmup_epochs 5 \
     --aa 'rand-m5-mstd0.25' \
     --temp_scale 0.0 \
-    --finetune '/home/kks/workspace/slr/image_backbone/exp/convnextStem-dim_512-depths_12-noz-cls/checkpoint-best-ema.pth' \
     --model_key 'model_ema' \
     --prefix '/mnt/data/phoenix-2014/phoenix-2014-multisigner' \
-    --gloss_dict_path '/home/kks/workspace/slr/data/phoenix2014/gloss_dict.npy' \
-    --meta_dir_path '/home/kks/workspace/slr/data/phoenix2014' \
+    --gloss_dict_path '/home/chingiz/mambaslr/Mamba_SLR/data/phoenix2014/gloss_dict.npy' \
+    --meta_dir_path '/home/chingiz/mambaslr/Mamba_SLR/data/phoenix2014' \
     --kp_path '/mnt/data/phoenix-2014/phoenix-2014-keypoints.pkl' \
-    --output_dir '/home/kks/workspace/slr/slr/exp/pheonix-2014' \
-    --log_dir '/home/kks/workspace/slr/slr/exp/pheonix-2014' \
-    --resume '/home/kks/workspace/slr/slr/exp/pheonix-2014' \
+    --output_dir '/home/chingiz/mambaslr/Mamba_SLR/slr/exp/pheonix-2014' \
+    --log_dir '/home/chingiz/mambaslr/Mamba_SLR/slr/exp/pheonix-2014' \
+    --resume '/home/chingiz/mambaslr/Mamba_SLR/slr/exp/pheonix-2014' \
     --auto_resume \
     --save_ckpt \
     --test_best \
@@ -46,3 +45,4 @@ torchrun --nproc_per_node="$N_GPUS" --master_port="$MASTER_PORT" ../../main.py \
     --pin_mem \
     --enable_deepspeed \
     --bf16 \
+    # --finetune '/home/kks/workspace/slr/image_backbone/exp/convnextStem-dim_512-depths_12-noz-cls/checkpoint-best-ema.pth' \

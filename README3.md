@@ -13,9 +13,9 @@ pip install \
 For making system use the toolkit from your conda environment rather than the **system's** one (which might be old to build the `causal-conv1d` package.)
 ```bash
 # inside your (ch_slr) env:
-conda install -y -c conda-forge \
-   cudatoolkit=12.1 \
-   nvcc_linux-64=12.1
+conda install nvidia \
+   cuda-toolkit=12.1 \
+   cuda-nvcc=12.1
 
 # since the nvcc looks at CUDA_HOME so the CUDA wheels installed 
 # in the conda env should be pointed to by the CUDA_HOME
