@@ -1,8 +1,8 @@
 # prepend to run_phoenix.sh (or your shell init)
 # (no filepath—just add these lines before torchrun)
-export CUDA_HOME=/usr/local/cuda-11.8
-export PATH=$CUDA_HOME/bin:$PATH
-export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
+# export CUDA_HOME=/usr/local/cuda-11.8
+# export PATH=$CUDA_HOME/bin:$PATH
+# export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
 
 export OMP_NUM_THREADS=1
 export CUDA_LAUNCH_BLOCKING=1
