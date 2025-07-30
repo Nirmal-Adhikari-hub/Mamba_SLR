@@ -1,6 +1,15 @@
 export OMP_NUM_THREADS=1
 
-N_GPUS=2
+# Dynamically determine number of GPUs
+if command -v nvidia-smi &> /dev/null; then
+    N_GPUS=$(nvidia-smi --query-gpu=name --format=csv,noheader | wc -l)
+else
+    N_GPUS=$(python - <<EOF
+import torch
+print(torch.cuda.device_count())
+EOF
+)
+fi
 MASTER_PORT=$((12000 + $RANDOM % 20000))
 
 
@@ -34,7 +43,7 @@ torchrun --nproc_per_node="$N_GPUS" --master_port="$MASTER_PORT" ../../main.py \
     --prefix '/shared/home/xvoice/nirmal/SlowFastSign/dataset/phoenix2014' \
     --gloss_dict_path '/shared/home/xvoice/nirmal/mambaslr/Mamba_SLR/data/phoenix2014/gloss_dict.npy' \
     --meta_dir_path '/shared/home/xvoice/nirmal/mambaslr/Mamba_SLR/data/phoenix2014' \
-    --kp_path '/shared/home/xvoice/nirmal/mambaslr/Mamba_SLR/data/phoenix2014/phoenix-2014-keypoints_hrnet-filtered_SMOOTH_v2-256x256_INTERPOLATED.pkl' \
+    --kp_path '/nas/Dataset/Phoenix/Phoenix-2014_cleaned/interpolated/phoenix-2014-keypoints_hrnet-filtered_SMOOTH_v2-256x256_INTERPOLATED.pkl' \
     --output_dir '/shared/home/xvoice/nirmal/mambaslr/Mamba_SLR/slr/exp/pheonix-2014' \
     --log_dir '/shared/home/xvoice/nirmal/mambaslr/Mamba_SLR/slr/exp/pheonix-2014' \
     --resume '/shared/home/xvoice/nirmal/mambaslr/Mamba_SLR/slr/exp/pheonix-2014' \
