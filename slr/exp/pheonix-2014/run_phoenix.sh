@@ -50,7 +50,7 @@ torchrun --nproc_per_node="$N_GPUS" --master_port="$MASTER_PORT" ../../main.py \
     --prefix '/shared/home/xvoice/nirmal/SlowFastSign/dataset/phoenix2014' \
     --gloss_dict_path '/shared/home/xvoice/nirmal/mambaslr/Mamba_SLR/data/phoenix2014/gloss_dict.npy' \
     --meta_dir_path '/shared/home/xvoice/nirmal/mambaslr/Mamba_SLR/data/phoenix2014' \
-    --kp_path '/nas/Dataset/Phoenix/Phoenix-2014_cleaned/interpolated/phoenix-2014-keypoints_hrnet-filtered_SMOOTH_v2-256x256_INTERPOLATED.pkl' \
+    --kp_path '/shared/home/xvoice/nirmal/mambaslr/Mamba_SLR/data/phoenix2014/phoenix-2014-keypoints_hrnet-filtered_SMOOTH_v2-256x256_INTERPOLATED.pkl' \
     --output_dir '/shared/home/xvoice/nirmal/mambaslr/Mamba_SLR/slr/exp/pheonix-2014' \
     --log_dir '/shared/home/xvoice/nirmal/mambaslr/Mamba_SLR/slr/exp/pheonix-2014' \
     --resume '/shared/home/xvoice/nirmal/mambaslr/Mamba_SLR/slr/exp/pheonix-2014' \
