@@ -20,7 +20,7 @@ from engine import train_one_epoch, evaluate_one_epoch
 from utils import NativeScalerWithGradNormCount as NativeScaler
 import utils
 import contextlib
-from .models.model import Model
+from models.model import Model
 
 
 def get_args():
