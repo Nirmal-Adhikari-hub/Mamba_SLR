@@ -6,6 +6,7 @@
 
 export OMP_NUM_THREADS=1
 export CUDA_LAUNCH_BLOCKING=1
+export LD_LIBRARY_PATH=/usr/local/cuda-11.8/lib64:$CONDA_PREFIX/lib:$LD_LIBRARY_PATH
 
 # export PYTHONPATH=/shared/home/xvoice/nirmal/mambaslr/Mamba_SLR/slr:$PYTHONPATH
 
