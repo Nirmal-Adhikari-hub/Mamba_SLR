@@ -7,7 +7,8 @@
 export OMP_NUM_THREADS=1
 export CUDA_LAUNCH_BLOCKING=1
 
-export PYTHONPATH=$(pwd)../../:$PYTHONPATH
+export PYTHONPATH=/shared/home/xvoice/nirmal/mambaslr/Mamba_SLR/slr/models
+:$PYTHONPATH
 
 # Dynamically determine number of GPUs
 if command -v nvidia-smi &> /dev/null; then
